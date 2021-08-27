@@ -56,10 +56,10 @@ if ( ! function_exists( 'orchid_store_support_gina_after_theme_setup' ) ) {
             add_action( 'orchid_store_site_identity', 'orchid_store_support_gina_site_identity' );
         }   
 
-        // if ( function_exists( 'orchid_store_product_search_action' ) ) {
-        //     remove_action( 'orchid_store_product_search', 'orchid_store_product_search_action', 10 );
-        //     add_action( 'orchid_store_product_search', 'orchid_store_support_gina_product_search_template', 10 );
-        // }
+        if ( function_exists( 'orchid_store_product_search_action' ) ) {
+            remove_action( 'orchid_store_product_search', 'orchid_store_product_search_action', 10 );
+            add_action( 'orchid_store_product_search', 'orchid_store_support_gina_product_search_template', 10 );
+        }
     }
     add_action( 'after_setup_theme', 'orchid_store_support_gina_after_theme_setup', 10 );
 }
